@@ -11,11 +11,14 @@ TODO
 1. Go to your concrete5 root directory (using a cli interface)
 2. If you not yet have installed composer do it now: `curl -sS https://getcomposer.org/installer | php`
 3. Add the following to your composer.json
-> {
->    "require": {
->        "farion/concrete5-tmblocks": "@dev"
->    }
->}
+
+  ```javascript
+  {
+    "require": {
+        "farion/concrete5-tmblocks": "@dev"
+    }
+  }
+  ```
 4. run `composer install` (or `php composer.phar install`)
 
 ## Examples
