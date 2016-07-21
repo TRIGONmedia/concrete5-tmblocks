@@ -21,11 +21,11 @@ This package helps you creating custom blocks with little code and maintainabili
 
 ### Copy the blueprint
 
-Copy the content of `blueprint` to the folder of your new block e.g. packages/MyOwnPackage/blocks/MyOwnBlock
+Copy the content of `blueprint` to the folder of your new block e.g. `packages/MyOwnPackage/blocks/MyOwnBlock`
 
 ### Change form.php
 
-Change the path in `form.php` to include the `form.php` from tmblocks. e.g. `$this->inc("../../../TmBlocks/inc/form.php");
+Change the path in `form.php` to include the `form.php` from tmblocks. e.g. `$this->inc("../../../TmBlocks/inc/form.php");`
 
 ### Use a nice icon
 
