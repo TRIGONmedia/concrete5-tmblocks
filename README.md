@@ -25,7 +25,8 @@ Copy the content of `blueprint` to the folder of your new block e.g. `packages/M
 
 ### Change form.php
 
-Change the path in `form.php` to include the `form.php` from tmblocks. e.g. `$this->inc("../../../TmBlocks/inc/form.php");`
+Change the path in `form.php` to include the `form.php` from tmblocks. e.g.
+`$this->inc("../../../TmBlocks/inc/form.php");`
 
 ### Use a nice icon
 
