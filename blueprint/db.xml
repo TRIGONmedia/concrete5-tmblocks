@@ -1,0 +1,10 @@
+<?php xml version="1.0"?>
+<schema version="0.3">
+    <table name="myOwnBlock">
+        <field name="bID" type="I">
+            <key/>
+            <unsigned/>
+        </field>
+        <!-- more fields here -->
+    </table>
+</schema>
