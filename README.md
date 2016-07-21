@@ -2,7 +2,7 @@
 
 This package helps you creating custom blocks with little code and maintainability.
 
-## Installation
+## 1. Installation
 
 1. Go to your concrete5 root directory (using a cli interface)
 2. If you not yet have installed composer do it now: `curl -sS https://getcomposer.org/installer | php`
@@ -17,26 +17,26 @@ This package helps you creating custom blocks with little code and maintainabili
   ```
 4. run `composer install` (or `php composer.phar install`)
 
-## How to use tmblocks?
+## 2. How to use tmblocks?
 
-### Copy the blueprint
+### 2.1 Copy the blueprint
 
 Copy the content of `blueprint` to the folder of your new block e.g. `packages/MyOwnPackage/blocks/MyOwnBlock`
 
-### Change form.php
+### 2.2 Change form.php
 
 Change the path in `form.php` to include the `form.php` from tmblocks. e.g.
 `$this->inc("../../../TmBlocks/inc/form.php");`
 
-### Use a nice icon
+### 2.3 Use a nice icon
 
 Replace `icon.png` with something matching to your new block.
 
-### Configure controller.php
+### 2.4 Configure controller.php
 
 At first fill in the names of your new block: namespace, description and type name.
   
-#### Configure fields
+#### 2.4.1 Configure fields
 
 In `construct()` add a new field type object to the tmFields array like this:
 
@@ -57,7 +57,7 @@ $this->tmFields["myString"]->setName("My Text"); // must be set
 $this->tmFields["myString"]->setRequired(true); // defaults to false
 ```
 
-#### Field types
+#### 2.4.2 Field types
 
 ##### BlockFieldTypeBoolean
 
@@ -148,7 +148,7 @@ $this->tmTabs = array(
 );
 ```
 
-### db.xml
+### 2.5 db.xml
 
 Matching to the fields defined in the controller you must change your db.xml
 
@@ -156,6 +156,8 @@ For each field type a matching field must exist in the database of course.
 The name must match to the array key of `tmFields`.
 
 Also do not forget to change the name of the table to match your block name e.g. `myOwnBlock`
+
+#### 2.5.1 Define database fields
 
 ##### BlockFieldTypeBoolean
 
