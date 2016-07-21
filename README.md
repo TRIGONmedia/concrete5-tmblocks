@@ -44,7 +44,7 @@ In `construct()` add a new field type object to the tmFields array like this:
 $this->tmFields["myText"] = new BlockFieldTypeString();
 ```
 
-Don't forget to include the type in the with `use` at the top of the file.
+Don't forget to include the type with `use` at the top of the file.
 
 ```
 use Concrete\Package\Tmblocks\Src\FieldTypes\BlockFieldTypeString;
