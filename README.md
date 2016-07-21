@@ -2,7 +2,7 @@
 
 This package helps you creating custom blocks with little code and maintainability.
 
-## 1. Installation
+## 1 Installation
 
 1. Go to your concrete5 root directory (using a cli interface)
 2. If you not yet have installed composer do it now: `curl -sS https://getcomposer.org/installer | php`
@@ -17,7 +17,7 @@ This package helps you creating custom blocks with little code and maintainabili
   ```
 4. run `composer install` (or `php composer.phar install`)
 
-## 2. How to use tmblocks?
+## 2 How to use tmblocks?
 
 ### 2.1 Copy the blueprint
 
@@ -130,7 +130,7 @@ $this->tmFields['myLinks']->setChildTypes(array(
 ));
 ```
 
-#### Configure Tabs
+#### 2.4.3 Configure Tabs
 
 If you have a lot of fields it make sense to spread them over tabs.
 Therefore you can use the tmTabs array.
