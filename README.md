@@ -130,7 +130,25 @@ $this->tmFields['myLinks']->setChildTypes(array(
 ));
 ```
 
-#### db.xml
+#### Configure Tabs
+
+If you have a lot of fields it make sense to spread them over tabs.
+Therefore you can use the tmTabs array.
+
+```
+$this->tmTabs = array(
+  'keyOfTheFirstTab' => array(
+    'title' => t('Name of the first ab'),
+    'fields' => array('keyOfTheFirstFieldInTheFirstTab','keyOfTheSecondFieldInTheFirstTab',...)
+  ),
+  'keyOfTheSecondTab' => array(
+    'title' => t('Name of the second tab'),
+    'fields' => array('keyOfTheFirstFieldInTheSecondTab','keyOfTheSecondFieldInTheSecondTab',...)
+  )
+);
+```
+
+### db.xml
 
 Matching to the fields defined in the controller you must change your db.xml
 
