@@ -106,7 +106,8 @@ abstract class BlockFieldTypeBase {
     return $this->getLabel($form,$k).$form->text($view->field($k), $value, array());
   }
 
-  protected function getFormMarkupImage($form,$view,$k,$value){
+  protected function getFormMarkupImage($form,$view,$k,$value)
+  {
 
     if (isset($value) && $value > 0) {
       $value_o = File::getByID($value);
@@ -115,7 +116,7 @@ abstract class BlockFieldTypeBase {
       }
     }
 
-    return $this->getLabel($form,$k).Core::make("helper/concrete/asset_library")->file($view->field('ccm-b-file-image'), "image", t("Choose File"), $value_o);
+    return $this->getLabel($form,$k).Core::make("helper/concrete/asset_library")->file($view->field('ccm-b-file-'.$k), $k, t("Choose File"), $value_o);
   }
 
 

@@ -29,6 +29,19 @@ class BlockFieldTypeImage extends BlockFieldTypeBase {
       return null;
     }
   }
+
+
+  public function getFormMarkupForRepeatable($form,$view,$k,$value, $field,$i){
+
+    if (isset($value) && $value > 0) {
+      $value_o = File::getByID($value);
+      if (!isset($value_o) || $value_o == null || $value_o->isError()) {
+        unset($value_o);
+      }
+    }
+
+    return $this->getLabel($form,$k).Core::make("helper/concrete/asset_library")->file($field.'_'.$i.'_'.$k, $field.'['.$i.']['.$k.']', t("Choose File"), $value_o);
+  }
 }
 
 
