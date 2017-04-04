@@ -10,9 +10,19 @@ This package helps you creating custom blocks with little code and maintainabili
 
   ```javascript
   {
+    ...
+    "repositories": [
+      ...
+      {
+        "url": "https://github.com/farion/concrete5-tmblocks",
+        "type": "git"
+      }
+    ],
     "require": {
-        "farion/concrete5-tmblocks": "@dev"
-    }
+      ...
+      "farion/tmblocks": "@dev"
+    },
+    ...
   }
   ```
 4. run `composer install` (or `php composer.phar install`)
