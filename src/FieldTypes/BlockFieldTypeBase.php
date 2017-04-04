@@ -129,10 +129,16 @@ abstract class BlockFieldTypeBase {
 
     return preg_replace(array(
       '/id="'.$k.'"/',
-      '/name="'.$k.'"/'
+      '/name="'.$k.'"/',
+      '/for="'.$k.'"/',
+      '/ccm-b-file-'.$k.'/',
+      '/\'inputName\': \''.$k.'\'/'
     ),array(
       'id="<%= id %>_'.$k.'"',
-      'name="<%= name %>['.$k.']"'
+      'name="<%= name %>['.$k.']"',
+      'for="<%= name %>['.$k.']"',
+      'ccm-b-file-<%= id %>-'.$k,
+      '\'inputName\': \'<%= name %>['.$k.']\''
     ),$markup);
   }
 
@@ -141,10 +147,16 @@ abstract class BlockFieldTypeBase {
 
     return preg_replace(array(
       '/id="'.$k.'"/',
-      '/name="'.$k.'"/'
+      '/name="'.$k.'"/',
+      '/for="'.$k.'"/',
+      '/ccm-b-file-'.$k.'/',
+      '/\'inputName\': \''.$k.'\'/'
     ),array(
       'id="'.$field.'_'.$i.'_'.$k.'"',
-      'name="'.$field.'['.$i.']['.$k.']"'
+      'name="'.$field.'['.$i.']['.$k.']"',
+      'for="'.$field.'['.$i.']['.$k.']"',
+      'ccm-b-file-'.$i.'-'.$k,
+      '\'inputName\': \''.$field.'['.$i.']['.$k.']\''
     ),$markup);
   }
 }

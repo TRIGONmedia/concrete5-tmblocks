@@ -41,8 +41,8 @@ class Controller extends Package
   {
 
     $al = AssetList::getInstance();
-    $al->register('javascript', 'repeatable', "../".$this->getRelativePath().'/js/backend/repeatable.js');
-    $al->register('css', 'repeatable', "../".$this->getRelativePath().'/css/backend/repeatable.css');
+    $al->register('javascript', 'repeatable', "../../".$this->getRelativePath().'/js/backend/repeatable.js');
+    $al->register('css', 'repeatable', "../../".$this->getRelativePath().'/css/backend/repeatable.css');
     $al->registerGroup('tm/repeatable', array(
       array('javascript', 'repeatable'),
       array('css', 'repeatable'),

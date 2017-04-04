@@ -4,6 +4,7 @@ namespace Concrete\Package\Tmblocks\Src\FieldTypes;
 
 use Page;
 use File;
+use Core;
 
 class BlockFieldTypeImage extends BlockFieldTypeBase {
 
