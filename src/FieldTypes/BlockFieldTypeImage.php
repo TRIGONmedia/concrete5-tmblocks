@@ -12,7 +12,7 @@ class BlockFieldTypeImage extends BlockFieldTypeBase {
 
     parent::validate($e,$value);
 
-    if(trim($value) == "" || $value == "0" || !is_object(File::getByID($value))) {
+    if( ($this->isRequired() == true) && (trim($value) == "" || $value == "0" || !is_object(File::getByID($value)))) {
       $e->add(t("%s is an invalid image file.", $this->getName()));
     }
 
