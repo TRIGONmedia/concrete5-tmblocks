@@ -95,11 +95,23 @@ abstract class TmBlockController extends BlockController
     }
   }
 
+  protected function setRepeatablesDataForView(){
+    foreach ($this->tmFields AS $k => $ft) {
+      if ($ft instanceof BlockFieldTypeRepeatable) {
+
+        $db = \Database::get();
+        $rawdata = $db->GetAll('SELECT * from ' . $this->btTable . ucfirst($k) . ' WHERE bID = ? ORDER BY sort', array($this->bID));
+
+        $this->set($k,$ft->getDataForView($rawdata));
+      }
+    }
+  }
+
   public function view()
   {
     $this->setFieldTypes();
     $this->setFieldTypesForView();
-    $this->setRepeatablesData();
+    $this->setRepeatablesDataForView();
   }
 
   public function add()
