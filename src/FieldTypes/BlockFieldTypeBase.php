@@ -38,6 +38,7 @@ abstract class BlockFieldTypeBase {
   }
 
   public function getAssets(){
+
     return array();
   }
 
@@ -84,6 +85,16 @@ abstract class BlockFieldTypeBase {
 
     return $label;
   }
+  
+  protected function getFormMarkupColor($form,$view,$k,$value){
+
+        return $this->getLabel($form,$k).Core::make('helper/form/color')->output($view->field($k), $value, array('preferredFormat' => 'hex'));
+    }
+
+  protected function getFormMarkupLabel($form,$view,$k,$value){
+
+     return "<label>".t($this->getName())."</label>";
+  }
 
   protected function getFormMarkupCheckbox($form,$view,$k,$value){
 
@@ -108,6 +119,8 @@ abstract class BlockFieldTypeBase {
 
   protected function getFormMarkupImage($form,$view,$k,$value)
   {
+syslog(LOG_DEBUG, "---");
+
 
     if (isset($value) && $value > 0) {
       $value_o = File::getByID($value);
@@ -143,6 +156,7 @@ abstract class BlockFieldTypeBase {
   }
 
   public function getFormMarkupForRepeatable($form,$view,$k,$value, $field,$i){
+
     $markup = $this->getFormMarkup($form,$view,$k,$value);
 
     return preg_replace(array(
